@@ -12,8 +12,8 @@ button{float:right;border:1px solid #9aa5b1;background:#fff;border-radius:6px;pa
 <h1>Tutoring: previous method vs hidden learning state</h1>
 <div class="summary"><strong>3 matched full conversations, same record indices and seed.</strong>
   <br>Previous average student/tutor word ratio: 1.18.
-  Hidden-state average: 1.64.
-  <br>Previous average turns: 63.7. Hidden-state: 28.7.
+  Hidden-state average: 1.42.
+  <br>Previous average turns: 63.7. Hidden-state: 25.3.
   <br>This page exposes basic mechanics and full text; it is not an automated quality verdict.
 </div>
 
@@ -218,9 +218,9 @@ ELAINE: So the test would be: drug on its own, almost no openings, then add GABA
 <section class="pair">
   <h2>Pair 2: how the byzantine empire stayed roman by changing</h2>
   <div class="statebox"><strong>Hidden learner:</strong> {&#x27;prior_knowledge&#x27;: &#x27;partial&#x27;, &#x27;confidence_calibration&#x27;: &#x27;overclaims&#x27;, &#x27;talk&#x27;: &#x27;terse&#x27;, &#x27;pace_memory&#x27;: &#x27;quick&#x27;, &#x27;english_proficiency&#x27;: &#x27;fluent&#x27;, &#x27;goal&#x27;: &#x27;exam&#x27;, &#x27;occupation_topic_distance&#x27;: &#x27;far&#x27;}
-    <br><strong>KCs:</strong> <code>kc1</code> partial → <strong>partial</strong> (ceiling known)<br><code>kc2</code> absent → <strong>absent</strong> (ceiling partial)<br><code>kc3</code> misconception → <strong>known</strong> (ceiling known)
-    <br><strong>Occasions:</strong> voiced_error: 2, stuck_escalation: 1, correct_worth_why: 14, false_got_it: 1, ending_ownership: 1
-    <br><strong>Advances:</strong> turn 6: kc3 misconception → partial via hand_back<br>turn 8: kc3 partial → known via hand_back
+    <br><strong>KCs:</strong> <code>kc1</code> partial → <strong>known</strong> (ceiling known)<br><code>kc2</code> absent → <strong>partial</strong> (ceiling partial)<br><code>kc3</code> misconception → <strong>known</strong> (ceiling known)
+    <br><strong>Occasions:</strong> voiced_error: 2, stuck_escalation: 7, correct_worth_why: 3, false_got_it: 1, ending_ownership: 1
+    <br><strong>Advances:</strong> turn 6: kc3 misconception → partial via hand_back<br>turn 8: kc3 partial → known via hand_back<br>turn 18: kc1 partial → known via worked_example<br>turn 26: kc2 absent → partial via worked_example
   </div>
   <div class="cols">
     <article>
@@ -309,83 +309,63 @@ SUE: Justinian never had to presuppose a rebuilt sovereign.</pre>
     </article>
     <article>
       <h3>Hidden-state redesign <button onclick="copyText('state-1', this)">Copy all</button></h3>
-      <p class="metrics">38 turns · student/tutor words 538/263
-        · ratio 2.05 · 18 tutor questions</p>
-      <pre id="state-1">MUI: Hi Nicola—Byzantium stayed Roman by changing; what got you onto it?
+      <p class="metrics">28 turns · student/tutor words 389/278
+        · ratio 1.40 · 7 tutor questions</p>
+      <pre id="state-1">MUI: Hi. Which event brought this up, 476 or 1204?
 
-NICOLA: Right, so Rome fell in 476 and that&#x27;s when Byzantium started, separate empire, Greek-speaking, Christian, ended with the Ottomans in 1453. That&#x27;s how I&#x27;ve got it.
+NICOLA: The fall of Rome, I reckon — that&#x27;s when the Byzantine Empire started, wasn&#x27;t it? Rome fell, then Constantinople took over as its own separate empire.
 
-MUI: Small correction: in 476 the western court ended; the eastern Roman emperor, government and capital at Constantinople carried on.
+MUI: Ah — 476 is only the western court ending. The eastern Roman state carried on under its own emperor in Constantinople, still calling itself Roman, not a separate new empire.
 
-NICOLA: Right, so the eastern half kept going after 476, but that&#x27;s still where Byzantine starts for me.
+NICOLA: Right, so the eastern Roman Empire kept going at Constantinople, still Roman. Got it.
 
-MUI: Fair—then compare two losses: in 476 which Roman court actually ended, and in 1204 who still claimed Roman sovereignty after the capital fell?
+MUI: Right, sort these two: four hundred and seventy-six ended the western court, so what did twelve hundred and four do to the eastern Roman state?
 
-NICOLA: So the western court&#x27;s the one that ended in 476. But Byzantium&#x27;s still a separate Greek empire to me — like a new business, not the same Roman shop carrying on.
+NICOLA: Twelve hundred and four, that&#x27;d be when the Byzantine Empire took over properly from Rome — the old Roman Empire ended and the new one at Constantinople began.
 
-MUI: What would make it the same shop?
+MUI: No — what did twelve hundred four interrupt?
 
-NICOLA: Same shop if the supply and circuits carry on, like rewiring an old building. But a Greek-speaking empire being Roman... and then I lose it.
+NICOLA: So the western court ended, but Constantinople kept the Roman name going... and twelve hundred and four, that&#x27;s, uh — something happened at Constantinople there, and then I lose it.
 
-MUI: After 1204, what made the restored state still Roman?
+MUI: Right — Constantinople was sacked in twelve oh four, not founded; what did that leave standing?
 
-NICOLA: The emperor and the Roman government kept going, like the same supply and switchboard even after the building gets rewired — so it&#x27;s still the same shop.
+NICOLA: So twelve oh four sacked Constantinople, but the eastern Roman state and its emperor were still standing after that. Like a firm keeping its name after moving premises.
 
-MUI: Why was the restored 1204 government Roman sovereignty, not just Greek survival?
+MUI: What makes a sack different from a handover?
 
-NICOLA: Because the emperor and the same Roman government kept running things, not just Greeks speaking Greek — like the same shop with a new switchboard. Still Roman, just rewired.
+NICOLA: A sack&#x27;s a violent taking — someone breaks in and wrecks the place. A handover&#x27;s passing it over, like when I took over the business: name and tools stayed.
 
-MUI: Why does that continuity make it Roman sovereignty?
+MUI: Spoke Greek, still Roman?
 
-NICOLA: Because it&#x27;s the same name and the same running of it, the emperor and government carrying on, not just the Greek language. Like the shop keeping its name through a rewire.
+NICOLA: The Greek bit — if they&#x27;re speaking Greek, what&#x27;s still Roman about them? That&#x27;s the part I can&#x27;t fit. Is it the emperor and the running of it, like the firm&#x27;s name staying on the van?
 
-MUI: Got a clear distinction there—what makes the emperor&#x27;s continuity sovereignty rather than just Greek culture?
+MUI: Yes — emperor, law, tax, army. Justinian&#x27;s code appeared in five twenty-nine in Latin; around nine hundred it was reworked in Greek, same legal authority. Tax rolls and army commands stayed Roman.
 
-NICOLA: The emperor and government running it are the shop&#x27;s name and running, not Greek language. Greek is just the wiring — the shop&#x27;s still Roman.
+NICOLA: Hold on — so the law and tax and army stayed Roman, but the law got redone in Greek? Say that bit again, slower, like the firm keeping its name while the paperwork changes.
 
-MUI: Constantinople was lost, yet Nicaea&#x27;s emperor still counted—why does that make it Roman sovereignty?
+MUI: Think of the paperwork translated, not replaced: the same inherited Roman rules, now written in Greek, still binding under the emperor&#x27;s courts.
 
-NICOLA: Because the shop&#x27;s name and the running of it carried on from Nicaea, not just the Greek language — the sovereignty went with that, not the building.
+NICOLA: So the emperor, law, tax and army all stayed Roman, but the law itself got written in Greek — is that what you mean?
 
-MUI: So losing the capital wasn&#x27;t losing the state—why doesn&#x27;t the capital&#x27;s loss end sovereignty if Nicaea&#x27;s emperor kept governing?
+MUI: Yes — Justinian&#x27;s Code came out in five twenty-nine in Latin; around nine hundred the Basilika put those same Roman laws into Greek, rearranged, still under the emperor&#x27;s courts.
 
-NICOLA: The name on the door and the running of it carried on at Nicaea, so the capital moving didn&#x27;t kill the sovereignty — just the building.
+NICOLA: So same Roman law, just translated into Greek for the paperwork — like my invoices changing format but the business staying the same.
 
-MUI: Right—why did Nicaea&#x27;s emperor count as Roman sovereignty while the capital was lost?
+MUI: Makes sense — so when the Basilika was written in Greek, whose law was it enforcing?
 
-NICOLA: Same reason — the running of the shop went with the emperor at Nicaea, so the name and the sovereignty went with that, not with Constantinople.
+NICOLA: So it&#x27;s still Roman law in the emperor&#x27;s courts — Greek on the page, Roman underneath. That&#x27;s the bit that was missing.
 
-MUI: So 1204 lost the capital but not sovereignty—why was 1453 final when 1204 wasn&#x27;t?
+MUI: Law&#x27;s settled. The Bosporus: twelve oh four, the city fell anyway — position didn&#x27;t pay for a fleet or buy alliances to stop the Crusaders.
 
-NICOLA: 1453&#x27;s final because the Ottomans took the running of it away altogether — no sovereign left to carry the name on, unlike Nicaea where it kept going.
+NICOLA: So the Bosporus spot didn&#x27;t stop the Crusaders in twelve oh four. Say that again slower — position doesn&#x27;t pay for a fleet or buy alliances?
 
-MUI: Right, fourteen fifty-three removes the sovereign; twelve oh four only moves him. Why does that make fourteen fifty-three final?
+MUI: Right — position doesn&#x27;t pay for a fleet or buy alliances. In twelve oh four the Crusaders and Venetians got in; walls and harbour couldn&#x27;t replace taxes, ships and allies.
 
-NICOLA: Because in 1453 there&#x27;s no sovereign left running the shop — the Ottomans took it over. In 1204 the running just moved to Nicaea.
+NICOLA: Right, so the walls and harbour didn&#x27;t replace taxes, ships and allies — position alone wasn&#x27;t enough. So after twelve oh four, how did the eastern Roman state carry on without Constantinople?
 
-MUI: What makes a sovereign who moves to Nicaea different from no sovereign left in 1453?
+MUI: Nicaea ran a government in Anatolia, taxing, paying soldiers, making alliances, and took the city back in twelve sixty-one, fifty-seven years after the sack.
 
-NICOLA: In 1204 the sovereign moved to Nicaea and kept running the shop, name and all. In 1453 the Ottomans took the running away, so no sovereign was left to carry the name.
-
-MUI: Why does moving the sovereign preserve the state, not just regional authority?
-
-NICOLA: Moving the sovereign keeps the same running going, just somewhere else — like the shop&#x27;s supply carrying on at a new address. In 1453 there&#x27;s nothing left to carry it.
-
-MUI: What makes moving him preserve sovereignty, not just authority?
-
-NICOLA: Moving the sovereign keeps the same running going, just at a new address — so it&#x27;s still the shop, not just some local boss. In 1453 nothing&#x27;s left to carry it.
-
-MUI: So what makes that state, not local rule?
-
-NICOLA: So they&#x27;re the state and not just a local boss because the sovereign carries the whole running with him, name and all, and a local boss only runs his own patch.
-
-MUI: You&#x27;ve got capital loss versus restoration clear. Why does that make Nicaea the same state, not just a local ruler holding out?
-
-NICOLA: There you go — the sovereign carries the whole running with him, name and all, so the state moves, not just some local boss holding a patch.
-
-MUI: Court end versus sovereignty loss—what&#x27;s the reason that difference makes it the same state?
-
-NICOLA: So the difference is the court ending versus the sovereignty going — one&#x27;s just the office closing, the other&#x27;s the whole shop moving. Same state because the sovereign carries the name and running with him. Like my business changing how I quote but keeping its name.</pre>
+NICOLA: So Nicaea&#x27;s like running the business out of a different yard — still taxing, still paying blokes, still making deals — then getting the old shop back in twelve sixty-one. Same firm, different address for a while.</pre>
     </article>
   </div>
 </section>
