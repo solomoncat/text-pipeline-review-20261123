@@ -1,0 +1,637 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Tutoring hidden-state comparison</title>
+<style>
+body{font:15px/1.45 system-ui;margin:0;background:#f5f6f8;color:#17202a}main{max-width:1500px;margin:auto;padding:24px}
+h1,h2,h3{margin:.3em 0}.summary,.statebox{background:white;border:1px solid #d8dde5;border-radius:10px;padding:14px;margin:12px 0}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}article{background:white;border:1px solid #d8dde5;border-radius:10px;padding:14px;min-width:0}
+pre{white-space:pre-wrap;font:14px/1.5 system-ui;max-height:650px;overflow:auto;background:#fafafa;padding:12px;border-radius:7px}
+button{float:right;border:1px solid #9aa5b1;background:#fff;border-radius:6px;padding:5px 9px;cursor:pointer}.metrics{color:#52606d}
+.pair{margin-top:28px}code{background:#edf2f7;padding:1px 4px}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+</style></head><body><main>
+<h1>Tutoring: previous method vs hidden learning state</h1>
+<div class="summary"><strong>3 matched full conversations, same record indices and seed.</strong>
+  <br>Previous average student/tutor word ratio: 1.18.
+  Hidden-state average: 1.39.
+  <br>Previous average turns: 63.7. Hidden-state: 29.3.
+  <br>This page exposes basic mechanics and full text; it is not an automated quality verdict.
+</div>
+
+<section class="pair">
+  <h2>Pair 1: how benzodiazepines calm the brain</h2>
+  <div class="statebox"><strong>Hidden learner:</strong> {&#x27;prior_knowledge&#x27;: &#x27;novice&#x27;, &#x27;confidence_calibration&#x27;: &#x27;overclaims&#x27;, &#x27;talk&#x27;: &#x27;terse&#x27;, &#x27;pace_memory&#x27;: &#x27;quick&#x27;, &#x27;english_proficiency&#x27;: &#x27;fluent&#x27;, &#x27;goal&#x27;: &#x27;exam&#x27;, &#x27;occupation_topic_distance&#x27;: &#x27;far&#x27;}
+    <br><strong>KCs:</strong> <code>kc1</code> misconception → <strong>known</strong> (ceiling known)<br><code>kc2</code> absent → <strong>partial</strong> (ceiling partial)<br><code>kc3</code> absent → <strong>absent</strong> (ceiling partial)
+    <br><strong>Occasions:</strong> voiced_error: 4, stuck_escalation: 7, correct_worth_why: 4, false_got_it: 1, ending_ownership: 1
+    <br><strong>Advances:</strong> turn 5: kc1 misconception → partial via worked_example<br>turn 11: kc1 partial → known via worked_example<br>turn 19: kc2 absent → partial via worked_example
+  </div>
+  <div class="cols">
+    <article>
+      <h3>Previous method <button onclick="copyText('base-0', this)">Copy all</button></h3>
+      <p class="metrics">67 turns · student/tutor words 359/613
+        · ratio 0.59 · 19 tutor questions</p>
+      <pre id="base-0">JASMINE: Hi Bianca—what have you seen about GABA, and where should we start?
+
+BIANCA: A colleague called them just mild sedatives.
+
+JASMINE: That undersells them—they don&#x27;t sedate by themselves so much as turn up GABA&#x27;s existing brake, binding a separate site and making channels open more often.
+
+BIANCA: That fits better than just calling it a sedative.
+
+JASMINE: Even when chloride doesn&#x27;t make the neuron more negative, those open
+
+BIANCA: Mm. Sure. Yeah.
+
+JASMINE: Think of chloride channels like a second rope on a boat—same gust, smaller movement. Have you pictured inhibition as always making the neuron more negative?
+
+BIANCA: Yeah. That&#x27;s how I picture it. Opening chloride channels makes it more negative, so it fires less.
+
+JASMINE: Picture the membrane at minus sixty-five and chloride&#x27;s reversal also minus sixty-five: opening channels adds no negativity, but three units of that conductance make the same excitatory current move voltage less.
+
+BIANCA: Okay, that one doesn&#x27;t click for me yet.
+
+JASMINE: When you hear positive allosteric modulator, what does that rule out about benzodiazepines—do they replace GABA, or just change its effect?
+
+BIANCA: I already tried it out on a junior colleague—said GABA is inhibitory, benzos boost it, chloride goes in and the brain calms down. Then I asked myself what happens if the neuron&#x27;s already sitting at that chloride level, and I got stuck.
+
+JASMINE: Benzodiazepines still need GABA present; even at chloride&#x27;s reversal, extra open channels make the same excitation move voltage less—shunting inhibition without visible negativity.
+
+BIANCA: Do they replace GABA, or just change it?
+
+JASMINE: They change GABA&#x27;s effect, not replace it. What does added conductance do to an excitatory push?
+
+BIANCA: I don&#x27;t know.
+
+JASMINE: What would help you see what added conductance does to an excitatory push?
+
+BIANCA: Not sure. Your rope example didn&#x27;t really land.
+
+JASMINE: Do numbers land better than pictures?
+
+BIANCA: Not really.
+
+JASMINE: Positive allosteric modulator means it binds a separate site from GABA and only strengthens the response when GABA is already there—it doesn&#x27;t substitute for GABA or open the channel much alone.
+
+BIANCA: Okay. Yep. Yeah.
+
+JASMINE: Even if the voltage doesn&#x27;t go more negative, open chloride channels give excitatory current another path, so the same push produces a smaller voltage change and firing is harder.
+
+BIANCA: Huh. Okay.
+
+JASMINE: Conductance—what&#x27;s that?
+
+BIANCA: Conductance? I don&#x27;t know. It&#x27;s just a word I say—I couldn&#x27;t tell you what it actually is.
+
+JASMINE: Conductance is how easily charge flows—what would more open channels do?
+
+BIANCA: I don&#x27;t know.
+
+JASMINE: One open chloride channel is one path; ten open channels give ten paths, so the same excitatory current spreads out and voltage rises less.
+
+BIANCA: That sounds like toll gates, but I still can&#x27;t picture it.
+
+JASMINE: What would you like to try next?
+
+BIANCA: At the firm I have to walk clients through decisions, so I test my own understanding by putting it in plain words and pinning an ordinary example on it. Here I can&#x27;t do that yet—the toll gates don&#x27;t get me there either.
+
+JASMINE: Take leak pulling to minus seventy and excitation to zero, one unit each: without inhibition that lands at minus thirty-five. Add three chloride units at minus seventy and it lands at minus fifty-six.
+
+BIANCA: Yeah. Yeah.
+
+JASMINE: See how the push shrinks?
+
+BIANCA: The push shrinks because some of the excitatory current goes through the
+
+JASMINE: Right, and that extra path comes from more openings — one channel flicking open ten times a second becomes twenty with the benzo there, same GABA, more paths.
+
+BIANCA: Okay. Oh okay.
+
+JASMINE: Withdrawal is the danger side: repeated use adapts the brain, so stopping abruptly can rebound anxiety, insomnia, even seizures—have you seen a taper, or only abrupt stops?
+
+BIANCA: Only from the outside—heard of people stopping cold, never seen a taper in detail.
+
+JASMINE: Alcohol and opioids with benzos can stop breathing, not just add sleepiness. Have you come across a mixed overdose at work, or only heard about it?
+
+BIANCA: Only from the outside—heard of cold stops, never a taper.
+
+JASMINE: Stopping cold after regular use can rebound into anxiety, insomnia, and seizures, so a slow medically supervised taper is the safer route.
+
+BIANCA: Haven&#x27;t seen one—only heard about it, same as the taper.
+
+JASMINE: A taper is like easing off a brake—what would yanking it do?
+
+BIANCA: Yanking it, rebound—but I&#x27;ve only heard about that.
+
+JASMINE: Yes, yanking rebounds. At chloride reversal, open channels shunt excitation without negativity. What about tapering?
+
+BIANCA: It rebounds—that&#x27;s all I&#x27;ve got on it.
+
+JASMINE: Mm-hmm.
+
+BIANCA: Yanking it rebounds. That&#x27;s still all I&#x27;ve got on it.
+
+JASMINE: Okay.
+
+BIANCA: I&#x27;ve said it—it rebounds. Nothing else on that.
+
+JASMINE: What have you heard about how that rebound feels?
+
+BIANCA: Just that people get shaky, can&#x27;t sleep, and the anxiety comes back worse than before. That&#x27;s the extent of what I&#x27;ve heard.
+
+JASMINE: That&#x27;s clear. In a mixed overdose with alcohol or opioids, what have you heard about breathing?
+
+BIANCA: I don&#x27;t know.
+
+JASMINE: Picture oxycodone plus a benzo: carbon dioxide rises past forty, the opioid-blunted brainstem doesn&#x27;t speed breathing, and sedation keeps the person from waking to fix it.
+
+BIANCA: Okay. Ah.
+
+JASMINE: Is it the extra path or the smaller voltage that&#x27;s still unresolved?
+
+BIANCA: I don&#x27;t know.
+
+JASMINE: That&#x27;s positive allosteric modulation: same GABA, one channel opens ten times a
+
+BIANCA: Honestly, none of it stuck—the toll gates, the numbers. I couldn&#x27;t tell you which piece is the problem. It just doesn&#x27;t make sense, so I can&#x27;t pick one.
+
+JASMINE: When someone&#x27;s asleep, what keeps breathing going automatically—and what does an opioid blunt?
+
+BIANCA: The brainstem handles breathing on its own. An opioid blunts that, so it doesn&#x27;t speed up when carbon dioxide climbs.
+
+JASMINE: That brainstem picture is right. Withdrawal is the same kind of adaptation: regular benzodiazepine use makes the brain push back against extra inhibition, so the same dose does less, and when the drug drops away the unopposed push-back shows up as rebound anxiety, insomnia, shakiness, and sometimes seizures—which is why a slow taper is safer than stopping cold.
+
+BIANCA: The brainstem keeps breathing going on its own—that part I can say.
+
+JASMINE: That&#x27;s solid—what everyday picture would make that breathing control click?</pre>
+    </article>
+    <article>
+      <h3>Hidden-state redesign <button onclick="copyText('state-0', this)">Copy all</button></h3>
+      <p class="metrics">29 turns · student/tutor words 384/320
+        · ratio 1.20 · 5 tutor questions</p>
+      <pre id="state-0">ELAINE: I&#x27;ve always figured benzos just add extra of the brain&#x27;s calming chemical, GABA, or simply switch the brain off.
+
+SANGEETA: Not quite extra GABA — they bind a separate spot on the GABA-A receptor and turn up the response to GABA that&#x27;s already there, so more chloride channels open more often. Without much GABA around, there&#x27;s little to amplify.
+
+ELAINE: So it&#x27;s not adding the brake fluid, it&#x27;s making the brake pedal press harder — but only if someone&#x27;s pressing.
+
+SANGEETA: Does that pedal open chloride channels?
+
+ELAINE: So the drug opens the chloride channels itself, and GABA just helps it along. Is that the idea?
+
+SANGEETA: No—the benzo doesn&#x27;t open the channel itself; that five-part receptor has two GABA spots and one benzo spot, so with both present GABA opens channels more often.
+
+ELAINE: All right — so the benzo&#x27;s not the key, it just makes the lock easier to turn when GABA&#x27;s already there. That&#x27;s what I&#x27;m hearing.
+
+SANGEETA: Yes, that&#x27;s it. So in that picture, which molecule actually opens the channel by itself — GABA or the benzo?
+
+ELAINE: GABA opens it by itself. The benzo just makes it happen more often when GABA&#x27;s around. Like a volume knob, not a tap. But the five-part receptor with two GABA spots — that part I lose.
+
+SANGEETA: What would you draw first to show those five parts and where each molecule binds?
+
+ELAINE: Two GABA spots and one benzo spot, that&#x27;s three of the five. What are the other two parts, and where do they sit on the ring?
+
+SANGEETA: Two alpha, two beta, one gamma — that&#x27;s five. GABA sits at the two alpha–beta joins; the benzo sits at the alpha–gamma join.
+
+ELAINE: Right — two alpha, two beta, one gamma. Like a form with five fields, and the spots are where things get filled in. That I can picture.
+
+SANGEETA: Right, that map&#x27;s solid. If the membrane already sits at chloride&#x27;s reversal potential, opening channels barely moves voltage. What happens to an excitatory signal arriving then?
+
+ELAINE: Reversal potential — I don&#x27;t know that one. You&#x27;ve lost me there.
+
+SANGEETA: Ten inside, a hundred ten outside, puts chloride&#x27;s reversal near minus sixty-four millivolts; at minus sixty, opening channels pulls toward it and the excitatory bump gets smaller — that&#x27;s shunting.
+
+ELAINE: Minus sixty-four, minus sixty — say that again, slower? It&#x27;s like a column of figures I haven&#x27;t added up yet.
+
+SANGEETA: Slower: at minus sixty-four millivolts, chloride has no net push, so current is zero. But opening channels still adds conductance, so the same excitatory current makes a smaller voltage bump. That is shunting.
+
+ELAINE: So the channel opens but nothing moves, because the pull is already balanced — and that still quiets the bump. Could we add those numbers up once, line by line?
+
+SANGEETA: Yes: log of ten over one hundred ten is minus one point zero four; times sixty-one point five gives minus sixty-four millivolts. At minus sixty, excitation bumps smaller.
+
+ELAINE: So the channel&#x27;s open and the current&#x27;s zero at minus sixty-four, yet the bump still shrinks — I had that as nothing happening. Adding conductance, not current — is that the difference?
+
+SANGEETA: Yes — conductance, not current. Same excitatory current that made a ten millivolt bump makes five when total conductance doubles, even with zero chloride current.
+
+ELAINE: And it&#x27;s the conductance that does it, not the current — the channel&#x27;s open, nothing flows, but the bump still halves. Let me check that line by line.
+
+SANGEETA: Which fails: arousal or carbon dioxide response?
+
+ELAINE: Arousal or carbon dioxide — I can&#x27;t say yet. Which one does the benzo actually dull, and how would you show me?
+
+SANGEETA: Benzos and alcohol dull arousal; opioids blunt the brainstem&#x27;s carbon-dioxide response—at forty rising, breathing doesn&#x27;t pick up while sedation leaves you too drowsy to notice.
+
+ELAINE: I&#x27;m probably wrong, but you gave me two things there. Which one are we on — arousal or carbon dioxide? Say it again slower, one at a time.
+
+SANGEETA: Benzos and alcohol dull arousal; opioids blunt carbon-dioxide response, so breathing doesn&#x27;t rise as CO2 climbs.
+
+ELAINE: So with opioids, the carbon dioxide builds up but the breathing doesn&#x27;t pick up — and the drowsiness means you don&#x27;t notice. Like a smoke alarm whose battery is pulled. Benzos dulling arousal is the one I&#x27;d still want walked through.</pre>
+    </article>
+  </div>
+</section>
+<section class="pair">
+  <h2>Pair 2: how the byzantine empire stayed roman by changing</h2>
+  <div class="statebox"><strong>Hidden learner:</strong> {&#x27;prior_knowledge&#x27;: &#x27;partial&#x27;, &#x27;confidence_calibration&#x27;: &#x27;overclaims&#x27;, &#x27;talk&#x27;: &#x27;terse&#x27;, &#x27;pace_memory&#x27;: &#x27;quick&#x27;, &#x27;english_proficiency&#x27;: &#x27;fluent&#x27;, &#x27;goal&#x27;: &#x27;exam&#x27;, &#x27;occupation_topic_distance&#x27;: &#x27;far&#x27;}
+    <br><strong>KCs:</strong> <code>kc1</code> partial → <strong>known</strong> (ceiling known)<br><code>kc2</code> absent → <strong>partial</strong> (ceiling partial)<br><code>kc3</code> misconception → <strong>known</strong> (ceiling known)
+    <br><strong>Occasions:</strong> voiced_error: 3, stuck_escalation: 9, correct_worth_why: 4, false_got_it: 1, ending_ownership: 1
+    <br><strong>Advances:</strong> turn 6: kc3 misconception → partial via hand_back<br>turn 8: kc3 partial → known via hand_back<br>turn 16: kc1 partial → known via worked_example<br>turn 24: kc2 absent → partial via worked_example
+  </div>
+  <div class="cols">
+    <article>
+      <h3>Previous method <button onclick="copyText('base-1', this)">Copy all</button></h3>
+      <p class="metrics">40 turns · student/tutor words 938/440
+        · ratio 2.13 · 8 tutor questions</p>
+      <pre id="base-1">MIJIN: I&#x27;m working on the adaptation chapter, and my test case is twelve oh four. If I follow offices, seals, fiscal practice and imperial titles through Nicaea rather than asking whether anyone governed uninterrupted from Constantinople, I get real transmission — but not the same state. I can&#x27;t yet state that qualification without making continuity sound like an essence. How would you phrase it?
+
+SUE: Which criterion does your chapter actually commit to—offices, law, or sovereignty?
+
+MIJIN: Offices.
+
+SUE: Which office carries your continuity claim through twelve oh four?
+
+MIJIN: The fiscal offices, the logothesia above all. My seals show the same bureaus and titles staffed by the same families across the twelve-oh-four break — the genikon&#x27;s people reappear at Nicaea. That is transmission of personnel and practice, not sovereignty.
+
+SUE: Then say the logothesion persisted as a working bureau and title, while sovereign authority was reconstituted at Nicaea—administrative continuity, not the same sovereign state.
+
+MIJIN: Mm. Sure. Yeah.
+
+SUE: What&#x27;s your next step with the language change?
+
+MIJIN: The language question is where I keep circling. My seals give me families and titles, not speech. So I can show the bureaus carried over — but I can&#x27;t yet explain why Greek-speaking staff make the state Greek rather than Roman.
+
+SUE: Right—so what&#x27;s your next step on the speech evidence?
+
+MIJIN: Nothing yet.
+
+SUE: Greek was already the east&#x27;s everyday speech; what made the state Roman was its law, offices and imperial claim, not the language of its clerks. Your seals carry continuity without proving speech.
+
+MIJIN: My seals can&#x27;t give me speech, so I won&#x27;t pretend they can. That&#x27;s the one place I&#x27;m genuinely stuck.
+
+SUE: The logothesia kept working as bureaus and titles, while sovereign authority was rebuilt at Nicaea; that
+
+MIJIN: On Romanitas itself, the field still argues whether it&#x27;s an analytical category or a lived claim. I treat it as a legal-political claim, not an ethnic or linguistic essence — that&#x27;s why Greek-speaking clerks don&#x27;t make the state Greek. My seals can&#x27;t test speech, and I won&#x27;t stretch them to.
+
+SUE: Sure. Yeah!
+
+MIJIN: What strikes me from my own seals is the families, not just the bureaus. The same people turn up at Nicaea with the same titles, and that&#x27;s how the fiscal practice survived the break — through personnel, not through an unbroken sovereign line. My tenth- to twelfth-century material taught me to watch the men behind the offices, and that habit carries straight into the post-twelve-oh-four evidence. The bureaus persisted; the sovereignty was rebuilt. Two different things, and the prosopography keeps them apart.
+
+SUE: Your prosopography can show personnel and practice crossing the break, but it can&#x27;t by itself prove the bureau&#x27;s legal continuity, so keep those two claims separate.
+
+MIJIN: Then what evidence would establish the bureau&#x27;s legal continuity, as distinct from its personnel?
+
+SUE: Imperial decrees, fiscal registers and court records that name the bureau and enforce its authority across the break—not just the same families holding the same titles.
+
+MIJIN: That&#x27;s the distinction I needed — decrees and registers enforce, seals only attest. In my material the kommerkion seals show the same tax bureau at Nicaea, but the enforcement evidence is thinner than I&#x27;d like; I&#x27;ll check the praktika for named logothetes.
+
+SUE: What do the praktika show about named logothetes enforcing fiscal authority?
+
+MIJIN: The praktika name logothetes, but thinly — the Nicaean ones survive far worse than the Palaiologan, and most named fiscal officials I can find come through chrysobulls and court decisions rather than the registers themselves. So the enforcement evidence is real but scattered by survival, not by absence of the office. That asymmetry is worth stating in the chapter rather than smoothing over: I can show the bureau enforced authority where the documents survive, and I say plainly where they don&#x27;t. My one uncertainty is whether the praktika will carry enough named logothetes to make the claim on their own, or whether I lean on the chrysobulls.
+
+SUE: Do chrysobulls name the bureau?
+
+MIJIN: They do. The chrysobulls name the logothesion and grant or confirm its authority, which is exactly why I said the enforcement evidence runs through them rather than the registers. So the chrysobulls carry the legal continuity claim and the seals carry the personnel and practice — two different kinds of evidence, two different claims. The praktika I use only where they survive; I don&#x27;t ask them to do the work the chrysobulls already do.
+
+SUE: That splits the evidence cleanly. One thing still open: do the chrysobulls name the logothesion as an ongoing bureau, or only grant authority anew?
+
+MIJIN: They name the logothesion itself, not just the man holding it. In my material the chrysobulls speak of the bureau and its authority — the office is the thing being confirmed, which is why I put the legal continuity claim there rather than on the seals. Where it gets delicate is the wording after twelve oh four: some of those grants read as confirmation of an existing bureau, others read as a fresh grant of authority, and I don&#x27;t want to flatten that difference. The confirmation language is what carries continuity; the fresh-grant language is what carries reconstitution. So my honest position is that the chrysobulls give me both, and the chapter has to say which formula does which work. That&#x27;s the one place I&#x27;m still checking wording against the documents rather than assuming. My seals show the people; the chrysobulls show the bureau named and its authority enforced. The praktika I use only where they survive, and I won&#x27;t ask them to prove what the chrysobulls already establish.
+
+SUE: The formula isn&#x27;t the institution. A chrysobull that confirms an existing logothesion is asserting continuity, while a fresh grant is doing a legal act of reconstitution, but the same document can do both: confirm the bureau and regrant authority after the break. So read the verb and the object separately, what is being confirmed or granted and to whom. That lets you say the bureau is named as ongoing even where authority is renewed, without making continuity an essence.
+
+MIJIN: Fine distinction, but my chrysobulls name the bureau as existing even in fresh grants.
+
+SUE: Then the fresh grant can presuppose the bureau while renewing its authority—the naming shows the institution is treated as existing, not that sovereignty ran unbroken. Read the grant as reconstitution inside a continuing office, and say the formula asserts continuity even when the act is new.
+
+MIJIN: Yeah. Oh, definitely.
+
+SUE: Justinian&#x27;s people issued the Code in five twenty-nine, the Digest and Institutes in five thirty-three, a revised Code in five thirty-four: five years, three stages, one legal project. That is preservation by editing, not copying.
+
+MIJIN: Justinian&#x27;s commission is the cleanest case I have of a state reissuing its own law rather than preserving a copy of it — the Code, then the Digest and Institutes, then the revised Code, all inside five years. That is a state editing its own inheritance, and it is the model I want for the post-twelve-oh-four chrysobulls: the bureau named as ongoing, its authority regranted, and the document doing both in one act. What the Justinian case does not give me is a test for my formula. There the emperor is the unquestioned source; after twelve oh four the grant has to presuppose a bureau whose sovereign was rebuilt. So I use Justinian as the analogy for preservation by editing, not as proof for my Nicaean wording.
+
+SUE: Your Greek-speaking clerks don&#x27;t make the state Greek; Roman statehood sat in law, offices and imperial claim, and Greek was already the east&#x27;s everyday speech.
+
+MIJIN: That fits the chrysobull formula exactly — preservation by editing, not copying.
+
+SUE: Editing preserves the text&#x27;s authority, but your Nicaean grant also rebuilds the sovereign behind the bureau, so keep reconstitution in the sentence, not just continuity.
+
+MIJIN: Good — reconstitution inside a continuing office. That&#x27;s the sentence.
+
+SUE: Roman statehood sat in law, offices, imperial claim—not clerks&#x27; Greek. Which chrysobull verb carries continuity: confirm or grant?
+
+MIJIN: Confirm carries continuity, grant carries reconstitution. My chrysobulls name the logothesion in both formulas, so the naming presupposes the bureau even where the act is a fresh grant — the verb tells me which claim the document is making, and I keep them apart in the chapter. That&#x27;s the wording test I needed. I&#x27;ll check the Nicaean grants against it and stop there for today.
+
+SUE: Justinian never had to presuppose a rebuilt sovereign.</pre>
+    </article>
+    <article>
+      <h3>Hidden-state redesign <button onclick="copyText('state-1', this)">Copy all</button></h3>
+      <p class="metrics">34 turns · student/tutor words 469/316
+        · ratio 1.48 · 9 tutor questions</p>
+      <pre id="state-1">MUI: Hi Nicola — what brought up Byzantium staying Roman?
+
+NICOLA: It&#x27;s a school thing — I&#x27;ve got it in my head that Byzantium was its own empire that started up after Rome fell, and I want the actual timeline straight.
+
+MUI: The timeline turns on this: four hundred seventy-six ended the western court, not the eastern Roman state; Byzantine is just a later label for that continuing state.
+
+NICOLA: Right, so the eastern lot kept going under a later name. That&#x27;s the switchboard, same system, new fittings.
+
+MUI: Switchboard&#x27;s decent. But four hundred seventy-six only pulls the western plug — after that, whose emperor in Constantinople was still issuing law and taxing?
+
+NICOLA: Byzantium was its own empire that kicked off once Rome fell, so Constantinople had its own emperor running things by then.
+
+MUI: What exactly ended in the west in four seventy-six, then?
+
+NICOLA: The Roman Empire in the west ended, I suppose — so a new one starts up east. Like replacing the fittings doesn&#x27;t make it a new house, but... and then I lose it.
+
+MUI: What exactly was lost in the west, and what wasn&#x27;t?
+
+NICOLA: The empire in the west ended — the emperor and the court — but the eastern half in Constantinople didn&#x27;t. Like replacing fittings doesn&#x27;t make it a new house, the state kept going.
+
+MUI: Did Greek speech cancel Roman law?
+
+NICOLA: No — Greek doesn&#x27;t cancel Roman law, those are separate wires. What I can&#x27;t split yet is what actually stopped in the west and what kept running.
+
+MUI: Justinian&#x27;s revised Code lands in five thirty-four; his later Novels, many in Greek, are new Roman law — same emperor, same authority, different language.
+
+NICOLA: Hang on — slow that down for me a tick. What exactly stopped in the west, and what kept running? I can&#x27;t picture which bits are which yet.
+
+MUI: In the west, the imperial court and emperor stopped; in the east, the emperor, taxation and Roman law kept running from Constantinople.
+
+NICOLA: So the west lost the court and emperor, but Constantinople kept the emperor, tax and Roman law running. Right — but then where does a whole new Byzantine Empire come from, if that&#x27;s just the same house?
+
+MUI: It doesn&#x27;t come from anywhere — no new empire. They called themselves Rhomaioi, Romans; around nine hundred the Greek Basilika reworked Justinian&#x27;s Roman law under the same emperor&#x27;s authority.
+
+NICOLA: So same emperor, same law, just Greek wording later on — like a rewire where the supply and the account stay in the same name. No new house, just new fittings.
+
+MUI: Constantinople&#x27;s position helped — but what had to keep working for that position to actually matter?
+
+NICOLA: Can&#x27;t picture what you mean — position on the map doing what, exactly? Nothing&#x27;s clicking there.
+
+MUI: In seven seventeen, an Arab fleet came through the Bosporus toward the city; tax paid ships and diplomacy brought Bulgar help.
+
+NICOLA: Slow that down for me — the fleet came up the Bosporus, then what? What had to keep working so the position actually counted for something?
+
+MUI: The Arab fleet came up the Bosporus to attack Constantinople; tax paid the Roman fleet, and diplomacy got Bulgar help hitting the besiegers through seven seventeen to seven eighteen.
+
+NICOLA: So tax paid ships and Bulgar help did the work — the map on its own wasn&#x27;t power. I still can&#x27;t picture how the position turned into that.
+
+MUI: Take seven seventeen: customs dues paid the Roman fleet, that fleet blocked the Bosporus, and Bulgar troops hit the besiegers — the map only became power through those payments and ships.
+
+NICOLA: Okay — so the position is the wiring, and the tax money is the current that makes it live. No money, no fleet, the map&#x27;s just sitting there.
+
+MUI: Grain tax paid for the fleet and the diplomacy that brought Bulgar help. Which link in that chain is still unclear?
+
+NICOLA: The wire-and-current picture works now. What I still can&#x27;t see is the grain tax actually turning into ships — where does that money go?
+
+MUI: Officials sell collected grain tax, then pay a shipwright for one dromon and its rowers&#x27; wages; those rowers block the Bosporus.
+
+NICOLA: So they sell the grain tax, and the cash pays a shipwright and the rowers&#x27; wages — that&#x27;s the current reaching the fleet. Same supply, same account, just new fittings.
+
+MUI: What does the shipwright spend it on?
+
+NICOLA: Right, so the cash goes to the shipwright — but what&#x27;s he actually spending it on? Timber, wages, what? That&#x27;s the bit I still can&#x27;t see.
+
+MUI: What does he need to buy to build it?
+
+NICOLA: Timber, pitch, nails, and paying the blokes doing the work — that&#x27;s where the cash goes. So the tax becomes a ship the same way a job becomes a rewire: materials and wages.</pre>
+    </article>
+  </div>
+</section>
+<section class="pair">
+  <h2>Pair 3: why trauma can keep the body on alert</h2>
+  <div class="statebox"><strong>Hidden learner:</strong> {&#x27;prior_knowledge&#x27;: &#x27;partial&#x27;, &#x27;confidence_calibration&#x27;: &#x27;overclaims&#x27;, &#x27;talk&#x27;: &#x27;terse&#x27;, &#x27;pace_memory&#x27;: &#x27;quick&#x27;, &#x27;english_proficiency&#x27;: &#x27;fluent&#x27;, &#x27;goal&#x27;: &#x27;exam&#x27;, &#x27;occupation_topic_distance&#x27;: &#x27;far&#x27;}
+    <br><strong>KCs:</strong> <code>kc1</code> misconception → <strong>partial</strong> (ceiling known)<br><code>kc2</code> absent → <strong>absent</strong> (ceiling partial)<br><code>kc3</code> absent → <strong>absent</strong> (ceiling known)
+    <br><strong>Occasions:</strong> voiced_error: 5, stuck_escalation: 6, correct_worth_why: 1, false_got_it: 1, ending_ownership: 1
+    <br><strong>Advances:</strong> turn 21: kc1 misconception → partial via worked_example
+  </div>
+  <div class="cols">
+    <article>
+      <h3>Previous method <button onclick="copyText('base-2', this)">Copy all</button></h3>
+      <p class="metrics">84 turns · student/tutor words 687/839
+        · ratio 0.82 · 16 tutor questions</p>
+      <pre id="base-2">SAMANTHA: Hey, Johnny.
+
+JOHNNY: Hey, Samantha. That alarm response is meant to be useful: attention narrows, heart and breathing speed up, muscles get ready, and sleep and digestion can wait.
+
+SAMANTHA: Yeah, that part I get. Had a stretch of nights where half my assault and crash patients were jumpy at discharge, and I&#x27;m just doing safety checks.
+
+JOHNNY: Is that jumpiness lasting past a month and actually interfering with their daily functioning?
+
+SAMANTHA: The month thing, sure, but that&#x27;s not what&#x27;s bugging me. I had a patient calm as anything in the department, grounded, vitals fine — and then jumpy again two weeks later. Calm here didn&#x27;t stick.
+
+JOHNNY: Calm in the department is one context. Safety learning often doesn&#x27;t carry over to home or a new cue, so the jumpiness coming back doesn&#x27;t mean the earlier calm was fake.
+
+SAMANTHA: Yeah. Yeah. Mm.
+
+JOHNNY: Avoiding gives relief—does it impair daily?
+
+SAMANTHA: Sure, but I&#x27;m not diagnosing them. It&#x27;s why the alarm returns two weeks out.
+
+JOHNNY: Avoiding the reminder buys relief right away, and that relief teaches the brain to keep avoiding, so it never gets the safe encounter that would settle the alarm.
+
+SAMANTHA: I get avoidance buys relief. What I keep seeing is a patient who&#x27;s fine on the unit, vitals clean, then tachycardic and jumpy at a follow-up two weeks out. That&#x27;s not avoidance, that&#x27;s the alarm firing again.
+
+JOHNNY: That&#x27;s return under stress—what was different at follow-up?
+
+SAMANTHA: Nothing I can point to — I&#x27;m not the one doing their follow-up.
+
+JOHNNY: Two weeks later in a different clinic room, the same racing heart can come back even with nothing bad happening—that&#x27;s contextual renewal: safety learned in one place doesn&#x27;t automatically transfer to a new one.
+
+SAMANTHA: So the unit calm is tied to the unit.
+
+JOHNNY: Right—the room, the smells, a certain tone of voice can all become conditioned cues, so the alarm fires before anyone works out why.
+
+SAMANTHA: So why does a new room set off the alarm at all?
+
+JOHNNY: One assault in an echoing car park can leave a railway station, a stairwell, even a tight chest during exercise firing the same alarm.
+
+SAMANTHA: Which means the alarm&#x27;s got a wide net. But a clinic room&#x27;s not a car park.
+
+JOHNNY: A clinic room doesn&#x27;t need to match a car park; generalization works on shared features, like enclosed space, echoing sounds, a certain smell, being looked at while you feel exposed, or your own racing heart. The brain learns places like this rather than one exact address, so a new room can carry enough resemblance to fire the alarm. That&#x27;s why the unit calm can be real and still not transfer.
+
+SAMANTHA: I see. Yeah.
+
+JOHNNY: Say the unit calm was learned over five days; two weeks later, a new clinic room with different lights and smells brings the racing heart back before she checks it.
+
+SAMANTHA: Okay, shared features I buy. But how does a neutral clinic room become a cue at all?
+
+JOHNNY: Pair the room with one bad moment—doctor says &#x27;we found something,&#x27; your heart lurches; next time the room alone can start that lurch.
+
+SAMANTHA: Hmm. Of course.
+
+JOHNNY: The old threat memory doesn&#x27;t get erased. Safe encounters build a second, competing association—this room means nothing bad now—so the alarm can still fire, but it has something to check against. That&#x27;s inhibitory learning.
+
+SAMANTHA: I&#x27;m still not squaring how a neutral room turns into a cue in the first place.
+
+JOHNNY: The trauma&#x27;s the unconditioned stimulus, right?
+
+SAMANTHA: Had a crash patient, calm in triage, then a hundred
+
+JOHNNY: Right—so is the crash itself the unconditioned threat, and the triage room just a cue?
+
+SAMANTHA: No idea.
+
+JOHNNY: So the triage room&#x27;s the conditioned stimulus, not the crash?
+
+SAMANTHA: I don&#x27;t know.
+
+JOHNNY: Mm-hmm.
+
+SAMANTHA: Huh. That&#x27;s not where it snags for me.
+
+JOHNNY: Fair enough. What&#x27;s the snag for you, then?
+
+SAMANTHA: The alarm coming back at all.
+
+JOHNNY: Yeah. And yeah.
+
+SAMANTHA: It&#x27;s whether the alarm ever really gets erased.
+
+JOHNNY: It doesn&#x27;t get erased. You build a second association—this place is safe now—and it competes with the old one, so the alarm can return without meaning the work was fake.
+
+SAMANTHA: So it&#x27;s not gone, just outvoted.
+
+JOHNNY: Outvoted, yeah—until a later stressor brings the old association back; that&#x27;s
+
+SAMANTHA: Oh, Okay.
+
+JOHNNY: What makes a room a conditioned cue?
+
+SAMANTHA: Shared features, not the address. Enclosed space, a smell, your own racing heart.
+
+JOHNNY: Your own racing heart can become a cue too — so does that count as a trigger even when nothing outside is unsafe?
+
+SAMANTHA: Yeah, it counts. Pair the lurch with the bad moment and the lurch alone starts it. Trigger&#x27;s the body, not the room.
+
+JOHNNY: A racing heart can become evidence of danger, so the alarm climbs and the body keeps feeding the memory.
+
+SAMANTHA: We get that on the monitor all the time. Patient glances at their own rate, sees it high, and it climbs — nothing in the room changed. Body&#x27;s triggering itself.
+
+JOHNNY: What makes that alarm feel present?
+
+SAMANTHA: Your own heart rate on the monitor. Patient sees it climbing, and the alarm is right there in the room with them.
+
+JOHNNY: That&#x27;s it—the memory arrives with the body&#x27;s alarm attached, and with the this-is-over context too weak, the heart rate feels like present danger.
+
+SAMANTHA: Yep. Uh huh.
+
+JOHNNY: Mm. Yeah.
+
+SAMANTHA: We see it on the monitor all night. Guy&#x27;s watching his own rate tick up and there&#x27;s nothing in the room doing it.
+
+JOHNNY: The monitor just makes it visible—the racing heart itself is the cue, and each beat confirms the danger the memory already predicts.
+
+SAMANTHA: Mm. Sure. Yeah.
+
+JOHNNY: Say she&#x27;s fine six weeks, then three bad nights after a stressor—old alarm returns; that&#x27;s reinstatement, not proof the earlier safety was fake.
+
+SAMANTHA: Getting calm on the unit doesn&#x27;t prove the crash wasn&#x27;t dangerous, and it sure doesn&#x27;t promise those triggers stay safe later.
+
+JOHNNY: What surprise tests the old prediction?
+
+SAMANTHA: Patient waits for the crash to happen again and nothing comes. The body&#x27;s braced and the room stays quiet.
+
+JOHNNY: That quiet room after the brace is the prediction error—the expected crash doesn&#x27;t come, so the safe association gets stronger.
+
+SAMANTHA: Here&#x27;s what doesn&#x27;t fit. Guy braces on the unit, nothing comes, room stays quiet — and he&#x27;s still jumpy at his two-week follow-up. So the quiet room didn&#x27;t outvote the old alarm for him. Maybe the brace is right and the surprise just isn&#x27;t enough. I don&#x27;t know. But I&#x27;ve watched that prediction error land and the alarm still win.
+
+JOHNNY: That quiet room was still the unit. Prediction error gets tied to where it happened, so a new clinic can bring the old alarm back even after a real surprise.
+
+SAMANTHA: So the surprise got filed under the unit. That fits what I see — brace, nothing comes, quiet room, and still jumpy at the two-week clinic. So if the prediction error only gets tied to where it happened, do you have to run that surprise in every room the alarm might fire in? Because you just told me the net&#x27;s wide — shared features, smells, your own heart rate — and there&#x27;s no way to hit all of those. What happens to the places you never get to?
+
+JOHNNY: No—vary the safe wait across three different rooms; you don&#x27;t need every room, and the ones you skip just stay less certain.
+
+SAMANTHA: So you spread the surprise across a few rooms instead of chasing every cue. Fine. But what actually happens in the brain when a stressor brings the old alarm back — is the safe association just getting weaker, or what?
+
+JOHNNY: A later stressor doesn&#x27;t usually erase the safe association or prove it was weak. It reactivates the old threat memory and the arousal that goes with it, so under stress the old alarm temporarily outvotes the safety learning; with rest, support and safe encounters, the newer learning can come back to the front.
+
+SAMANTHA: So the old alarm outvotes the safety learning under stress — what&#x27;s actually happening in the brain when the stressor hits, is the safety association getting weaker or just getting drowned out?
+
+JOHNNY: Not weaker, just harder to pull up—does it come back full strength?
+
+SAMANTHA: Yeah. Full strength.
+
+JOHNNY: What if safe waits vary across rooms?
+
+SAMANTHA: Yeah — full strength.
+
+JOHNNY: Access drops—what restores it?
+
+SAMANTHA: No idea what restores it.
+
+JOHNNY: Retrieval cues bring the safe learning back—familiar places, people, rest, and small safe encounters remind the body the danger passed, so access returns.
+
+SAMANTHA: Ah!
+
+JOHNNY: Say he&#x27;s steady six weeks, then a backfire sets off three jumpy nights—old alarm reactivated, not the safety work erased; it usually fades again with rest and safe routine.
+
+SAMANTHA: Rest and familiar people bring it back — that part I&#x27;ve seen on the unit.
+
+JOHNNY: The racing heart can cue itself—alarm feeds alarm. How do you tell that loop from a room trigger at follow-up?
+
+SAMANTHA: Room trigger you can point to—door, smell, who&#x27;s in it. The heart loop there&#x27;s nothing to point at, just the monitor climbing. And the monitor&#x27;s always in the room.
+
+JOHNNY: The heart loop can pick up company—tight chest, sweating, breath going shallow—so any of those can start firing like the monitor did, even in a quiet room. That&#x27;s interoceptive generalization: the body learns a whole class of sensations as the cue, not just one number.
+
+SAMANTHA: Ah, absolutely.
+
+JOHNNY: What makes the safe wait surprise the alarm?</pre>
+    </article>
+    <article>
+      <h3>Hidden-state redesign <button onclick="copyText('state-2', this)">Copy all</button></h3>
+      <p class="metrics">25 turns · student/tutor words 383/259
+        · ratio 1.48 · 7 tutor questions</p>
+      <pre id="state-2">SHOBHA: Hello. For my test — why does the body stay on alert after trauma? I say it is because the bad memory keeps coming back, like wind at night making me check the nets.
+
+SANTOSH: The memory keeps returning, true, but sounds and places get tied to danger too, so your body tightens before you have checked you are safe.
+
+SHOBHA: Okay, got it. So the wind at night could set off my body alarm before I even check the pond.
+
+SANTOSH: The wind can trip the alarm before you check. Once you check the pond and it&#x27;s calm, does the alarm settle?
+
+SHOBHA: Yes, the wind sets off my body alarm. But the real problem is the bad memory keeps coming back — once it fades, the body settles.
+
+SANTOSH: Alarm fires before memory—what settles it after checking?
+
+SHOBHA: Okay, so the body alarm and the memory are two separate things. For me, the trauma is the bad event, and the body stays tight because that bad memory keeps coming back.
+
+SANTOSH: Wind starts the alarm before memory. When you check the pond and it&#x27;s calm, what happens inside you?
+
+SHOBHA: When the pond is calm, my chest loosens. But I still say the bad memory is what keeps the body tight — that is the whole problem.
+
+SANTOSH: Two in the morning, wind rattles the net; shoulders tighten in seconds, before memory. You check the pond for a minute, chest loosens. That settling is safety learning, not memory fading.
+
+SHOBHA: Say that again slower, please. So the chest loosening after I check the calm pond is safety learning, not the bad memory going away?
+
+SANTOSH: Yes. Say you check the pond at two in the morning: wind rattles the net, shoulders tighten; you look, see calm water, chest loosens in a minute or two. That loosening is your body learning this wind is not danger, while the memory can still be there.
+
+SHOBHA: So safety learning is the chest loosening after I check the calm pond. That word I don&#x27;t fully have yet. Show me the one step where it is different from the memory fading.
+
+SANTOSH: The alarm can fire from the wind before the memory arrives. Safety learning is the new evidence after you check: calm water, chest loosens. That is separate from the old memory fading.
+
+SHOBHA: You said safety learning is the new evidence after I check, separate from the memory fading. That step between the two still looks the same to me — show me the one difference.
+
+SANTOSH: What if the memory stays but your chest loosens?
+
+SHOBHA: If the chest loosens, then the bad memory must be fading — because it is the memory that keeps the body tight. Once it fades, the problem is gone.
+
+SANTOSH: What would you notice if the memory stayed sharp and your chest still loosened?
+
+SHOBHA: Then the chest would stay tight, because the bad memory is still there. The tight chest is the sign the memory has not faded.
+
+SANTOSH: Hm. What would you test next to tell those apart?
+
+SHOBHA: If the memory stays sharp, my chest stays tight — that tightness is how I know the bad memory is still there. I can&#x27;t picture it loosening while the memory is still sharp.
+
+SANTOSH: Try this: wind at two, shoulders tight; you check the pond three times, calm each time; by the third check your chest loosens while the memory stays sharp.
+
+SHOBHA: So by the third check the chest loosens from the checking, not from the memory going. The sharp memory can stay and the chest can still loosen — I had those stuck together.
+
+SANTOSH: Wind fires the alarm before you know you&#x27;re safe. What other cue have you come across?
+
+SHOBHA: So the checking teaches my body the wind is not danger, even with the sharp memory still there. Like my neighbour staying away from the jetty after the drowning — is that a cue too?</pre>
+    </article>
+  </div>
+</section>
+</main><script>
+async function copyText(id, button) {
+  await navigator.clipboard.writeText(document.getElementById(id).innerText);
+  const old=button.textContent; button.textContent='Copied'; setTimeout(()=>button.textContent=old,1200);
+}
+</script></body></html>
