@@ -12,17 +12,17 @@ button{float:right;border:1px solid #9aa5b1;background:#fff;border-radius:6px;pa
 <h1>Tutoring: previous method vs hidden learning state</h1>
 <div class="summary"><strong>3 matched full conversations, same record indices and seed.</strong>
   <br>Previous average student/tutor word ratio: 1.18.
-  Hidden-state average: 1.39.
-  <br>Previous average turns: 63.7. Hidden-state: 29.3.
+  Hidden-state average: 1.64.
+  <br>Previous average turns: 63.7. Hidden-state: 28.7.
   <br>This page exposes basic mechanics and full text; it is not an automated quality verdict.
 </div>
 
 <section class="pair">
   <h2>Pair 1: how benzodiazepines calm the brain</h2>
   <div class="statebox"><strong>Hidden learner:</strong> {&#x27;prior_knowledge&#x27;: &#x27;novice&#x27;, &#x27;confidence_calibration&#x27;: &#x27;overclaims&#x27;, &#x27;talk&#x27;: &#x27;terse&#x27;, &#x27;pace_memory&#x27;: &#x27;quick&#x27;, &#x27;english_proficiency&#x27;: &#x27;fluent&#x27;, &#x27;goal&#x27;: &#x27;exam&#x27;, &#x27;occupation_topic_distance&#x27;: &#x27;far&#x27;}
-    <br><strong>KCs:</strong> <code>kc1</code> misconception → <strong>known</strong> (ceiling known)<br><code>kc2</code> absent → <strong>partial</strong> (ceiling partial)<br><code>kc3</code> absent → <strong>absent</strong> (ceiling partial)
-    <br><strong>Occasions:</strong> voiced_error: 4, stuck_escalation: 7, correct_worth_why: 4, false_got_it: 1, ending_ownership: 1
-    <br><strong>Advances:</strong> turn 5: kc1 misconception → partial via worked_example<br>turn 11: kc1 partial → known via worked_example<br>turn 19: kc2 absent → partial via worked_example
+    <br><strong>KCs:</strong> <code>kc1</code> misconception → <strong>partial</strong> (ceiling known)<br><code>kc2</code> absent → <strong>absent</strong> (ceiling partial)<br><code>kc3</code> absent → <strong>absent</strong> (ceiling partial)
+    <br><strong>Occasions:</strong> voiced_error: 4, stuck_escalation: 6, correct_worth_why: 1, false_got_it: 1, ending_ownership: 1
+    <br><strong>Advances:</strong> turn 9: kc1 misconception → partial via worked_example
   </div>
   <div class="cols">
     <article>
@@ -165,74 +165,62 @@ JASMINE: That&#x27;s solid—what everyday picture would make that breathing con
     </article>
     <article>
       <h3>Hidden-state redesign <button onclick="copyText('state-0', this)">Copy all</button></h3>
-      <p class="metrics">29 turns · student/tutor words 384/320
-        · ratio 1.20 · 5 tutor questions</p>
-      <pre id="state-0">ELAINE: I&#x27;ve always figured benzos just add extra of the brain&#x27;s calming chemical, GABA, or simply switch the brain off.
+      <p class="metrics">23 turns · student/tutor words 352/234
+        · ratio 1.50 · 7 tutor questions</p>
+      <pre id="state-0">ELAINE: I always thought a benzodiazepine just adds more GABA, the brain&#x27;s brake fluid, so it switches off. Like pouring more brake fluid in.
 
-SANGEETA: Not quite extra GABA — they bind a separate spot on the GABA-A receptor and turn up the response to GABA that&#x27;s already there, so more chloride channels open more often. Without much GABA around, there&#x27;s little to amplify.
+SANGEETA: That is the usual picture, but benzodiazepines are not extra brake fluid. They bind a different spot on the GABA-A receptor and turn up the response to GABA already released, so channels open more often. Without GABA there, little happens.
 
-ELAINE: So it&#x27;s not adding the brake fluid, it&#x27;s making the brake pedal press harder — but only if someone&#x27;s pressing.
+ELAINE: Okay, so it doesn&#x27;t add brake fluid—it just makes the brake pedal more sensitive? I&#x27;d like a concrete example with numbers.
 
-SANGEETA: Does that pedal open chloride channels?
+SANGEETA: GABA alone opens; both open more often?
 
-ELAINE: So the drug opens the chloride channels itself, and GABA just helps it along. Is that the idea?
+ELAINE: So it makes the brain&#x27;s own GABA work harder, not more brake fluid. But then the GABA still does the stopping, and the drug just adds more of it.
 
-SANGEETA: No—the benzo doesn&#x27;t open the channel itself; that five-part receptor has two GABA spots and one benzo spot, so with both present GABA opens channels more often.
+SANGEETA: Right, GABA does the stopping. What if the drug is there but GABA isn&#x27;t?
 
-ELAINE: All right — so the benzo&#x27;s not the key, it just makes the lock easier to turn when GABA&#x27;s already there. That&#x27;s what I&#x27;m hearing.
+ELAINE: So with no GABA, nothing happens—but I still picture the drug as extra brake fluid, and more fluid means more braking.
 
-SANGEETA: Yes, that&#x27;s it. So in that picture, which molecule actually opens the channel by itself — GABA or the benzo?
+SANGEETA: It changes the response, not the amount of GABA. What would you look for when GABA is absent?
 
-ELAINE: GABA opens it by itself. The benzo just makes it happen more often when GABA&#x27;s around. Like a volume knob, not a tap. But the five-part receptor with two GABA spots — that part I lose.
+ELAINE: So you&#x27;re saying it changes the response, not the amount of GABA. But I still picture more brake fluid meaning more braking—how do you tell those apart?
 
-SANGEETA: What would you draw first to show those five parts and where each molecule binds?
+SANGEETA: Measure GABA in the synapse and channel openings separately: if the drug added GABA, GABA levels would rise. In a recording with ten micromolar GABA, adding the benzodiazepine leaves the GABA concentration unchanged but raises openings, say from five to fifteen per second. That&#x27;s how you tell them apart.
 
-ELAINE: Two GABA spots and one benzo spot, that&#x27;s three of the five. What are the other two parts, and where do they sit on the ring?
+ELAINE: Ten micromolar GABA, openings going from five to fifteen a second, GABA level unchanged—so the drug didn&#x27;t add brake fluid, the numbers would show that. But more brake fluid still means more braking to me.
 
-SANGEETA: Two alpha, two beta, one gamma — that&#x27;s five. GABA sits at the two alpha–beta joins; the benzo sits at the alpha–gamma join.
+SANGEETA: Why does binding a separate site mean it isn&#x27;t extra brake fluid?
 
-ELAINE: Right — two alpha, two beta, one gamma. Like a form with five fields, and the spots are where things get filled in. That I can picture.
+ELAINE: I think I followed the numbers, but why does the separate site matter? In records, a separate entry still adds something to the file... and then I lose it.
 
-SANGEETA: Right, that map&#x27;s solid. If the membrane already sits at chloride&#x27;s reversal potential, opening channels barely moves voltage. What happens to an excitatory signal arriving then?
+SANGEETA: What would you test next to show the separate site changes the response?
 
-ELAINE: Reversal potential — I don&#x27;t know that one. You&#x27;ve lost me there.
+ELAINE: I followed five to fifteen openings with GABA unchanged, but the separate site is where I drift. In records, a separate entry still adds something to the file. I can&#x27;t say what I&#x27;d test.
 
-SANGEETA: Ten inside, a hundred ten outside, puts chloride&#x27;s reversal near minus sixty-four millivolts; at minus sixty, opening channels pulls toward it and the excitatory bump gets smaller — that&#x27;s shunting.
+SANGEETA: Ah, right—if it sat in GABA&#x27;s own spot, what would happen with no GABA around?
 
-ELAINE: Minus sixty-four, minus sixty — say that again, slower? It&#x27;s like a column of figures I haven&#x27;t added up yet.
+ELAINE: The separate site is the gap I can&#x27;t cross. If it sat in GABA&#x27;s own spot, I&#x27;d still expect something to happen with no GABA around — that&#x27;s the part I can&#x27;t sort out.
 
-SANGEETA: Slower: at minus sixty-four millivolts, chloride has no net push, so current is zero. But opening channels still adds conductance, so the same excitatory current makes a smaller voltage bump. That is shunting.
+SANGEETA: If it sat in GABA&#x27;s own spot, it would open the channel by itself, like adding brake fluid; sitting elsewhere, it only changes how strongly the receptor answers the GABA already there.
 
-ELAINE: So the channel opens but nothing moves, because the pull is already balanced — and that still quiets the bump. Could we add those numbers up once, line by line?
+ELAINE: So in GABA&#x27;s own spot it would act like brake fluid by itself; in a separate spot it only changes how strongly the brain&#x27;s own GABA gets answered. I still can&#x27;t say what test would show that.
 
-SANGEETA: Yes: log of ten over one hundred ten is minus one point zero four; times sixty-one point five gives minus sixty-four millivolts. At minus sixty, excitation bumps smaller.
+SANGEETA: So the test is benzodiazepine alone first, almost no openings, then add GABA and see openings rise; same GABA amount, different response.
 
-ELAINE: So the channel&#x27;s open and the current&#x27;s zero at minus sixty-four, yet the bump still shrinks — I had that as nothing happening. Adding conductance, not current — is that the difference?
+ELAINE: Right—so the test is drug alone, almost no openings, then add GABA and openings jump. The step I still can&#x27;t make is saying that test in my own words.
 
-SANGEETA: Yes — conductance, not current. Same excitatory current that made a ten millivolt bump makes five when total conductance doubles, even with zero chloride current.
+SANGEETA: What test would you run next to show the site is separate?
 
-ELAINE: And it&#x27;s the conductance that does it, not the current — the channel&#x27;s open, nothing flows, but the bump still halves. Let me check that line by line.
-
-SANGEETA: Which fails: arousal or carbon dioxide response?
-
-ELAINE: Arousal or carbon dioxide — I can&#x27;t say yet. Which one does the benzo actually dull, and how would you show me?
-
-SANGEETA: Benzos and alcohol dull arousal; opioids blunt the brainstem&#x27;s carbon-dioxide response—at forty rising, breathing doesn&#x27;t pick up while sedation leaves you too drowsy to notice.
-
-ELAINE: I&#x27;m probably wrong, but you gave me two things there. Which one are we on — arousal or carbon dioxide? Say it again slower, one at a time.
-
-SANGEETA: Benzos and alcohol dull arousal; opioids blunt carbon-dioxide response, so breathing doesn&#x27;t rise as CO2 climbs.
-
-ELAINE: So with opioids, the carbon dioxide builds up but the breathing doesn&#x27;t pick up — and the drowsiness means you don&#x27;t notice. Like a smoke alarm whose battery is pulled. Benzos dulling arousal is the one I&#x27;d still want walked through.</pre>
+ELAINE: So the test would be: drug on its own, almost no openings, then add GABA and the openings jump. Or GABA first, then the drug, and openings rise while GABA stays the same.</pre>
     </article>
   </div>
 </section>
 <section class="pair">
   <h2>Pair 2: how the byzantine empire stayed roman by changing</h2>
   <div class="statebox"><strong>Hidden learner:</strong> {&#x27;prior_knowledge&#x27;: &#x27;partial&#x27;, &#x27;confidence_calibration&#x27;: &#x27;overclaims&#x27;, &#x27;talk&#x27;: &#x27;terse&#x27;, &#x27;pace_memory&#x27;: &#x27;quick&#x27;, &#x27;english_proficiency&#x27;: &#x27;fluent&#x27;, &#x27;goal&#x27;: &#x27;exam&#x27;, &#x27;occupation_topic_distance&#x27;: &#x27;far&#x27;}
-    <br><strong>KCs:</strong> <code>kc1</code> partial → <strong>known</strong> (ceiling known)<br><code>kc2</code> absent → <strong>partial</strong> (ceiling partial)<br><code>kc3</code> misconception → <strong>known</strong> (ceiling known)
-    <br><strong>Occasions:</strong> voiced_error: 3, stuck_escalation: 9, correct_worth_why: 4, false_got_it: 1, ending_ownership: 1
-    <br><strong>Advances:</strong> turn 6: kc3 misconception → partial via hand_back<br>turn 8: kc3 partial → known via hand_back<br>turn 16: kc1 partial → known via worked_example<br>turn 24: kc2 absent → partial via worked_example
+    <br><strong>KCs:</strong> <code>kc1</code> partial → <strong>partial</strong> (ceiling known)<br><code>kc2</code> absent → <strong>absent</strong> (ceiling partial)<br><code>kc3</code> misconception → <strong>known</strong> (ceiling known)
+    <br><strong>Occasions:</strong> voiced_error: 2, stuck_escalation: 1, correct_worth_why: 14, false_got_it: 1, ending_ownership: 1
+    <br><strong>Advances:</strong> turn 6: kc3 misconception → partial via hand_back<br>turn 8: kc3 partial → known via hand_back
   </div>
   <div class="cols">
     <article>
@@ -321,84 +309,92 @@ SUE: Justinian never had to presuppose a rebuilt sovereign.</pre>
     </article>
     <article>
       <h3>Hidden-state redesign <button onclick="copyText('state-1', this)">Copy all</button></h3>
-      <p class="metrics">34 turns · student/tutor words 469/316
-        · ratio 1.48 · 9 tutor questions</p>
-      <pre id="state-1">MUI: Hi Nicola — what brought up Byzantium staying Roman?
+      <p class="metrics">38 turns · student/tutor words 538/263
+        · ratio 2.05 · 18 tutor questions</p>
+      <pre id="state-1">MUI: Hi Nicola—Byzantium stayed Roman by changing; what got you onto it?
 
-NICOLA: It&#x27;s a school thing — I&#x27;ve got it in my head that Byzantium was its own empire that started up after Rome fell, and I want the actual timeline straight.
+NICOLA: Right, so Rome fell in 476 and that&#x27;s when Byzantium started, separate empire, Greek-speaking, Christian, ended with the Ottomans in 1453. That&#x27;s how I&#x27;ve got it.
 
-MUI: The timeline turns on this: four hundred seventy-six ended the western court, not the eastern Roman state; Byzantine is just a later label for that continuing state.
+MUI: Small correction: in 476 the western court ended; the eastern Roman emperor, government and capital at Constantinople carried on.
 
-NICOLA: Right, so the eastern lot kept going under a later name. That&#x27;s the switchboard, same system, new fittings.
+NICOLA: Right, so the eastern half kept going after 476, but that&#x27;s still where Byzantine starts for me.
 
-MUI: Switchboard&#x27;s decent. But four hundred seventy-six only pulls the western plug — after that, whose emperor in Constantinople was still issuing law and taxing?
+MUI: Fair—then compare two losses: in 476 which Roman court actually ended, and in 1204 who still claimed Roman sovereignty after the capital fell?
 
-NICOLA: Byzantium was its own empire that kicked off once Rome fell, so Constantinople had its own emperor running things by then.
+NICOLA: So the western court&#x27;s the one that ended in 476. But Byzantium&#x27;s still a separate Greek empire to me — like a new business, not the same Roman shop carrying on.
 
-MUI: What exactly ended in the west in four seventy-six, then?
+MUI: What would make it the same shop?
 
-NICOLA: The Roman Empire in the west ended, I suppose — so a new one starts up east. Like replacing the fittings doesn&#x27;t make it a new house, but... and then I lose it.
+NICOLA: Same shop if the supply and circuits carry on, like rewiring an old building. But a Greek-speaking empire being Roman... and then I lose it.
 
-MUI: What exactly was lost in the west, and what wasn&#x27;t?
+MUI: After 1204, what made the restored state still Roman?
 
-NICOLA: The empire in the west ended — the emperor and the court — but the eastern half in Constantinople didn&#x27;t. Like replacing fittings doesn&#x27;t make it a new house, the state kept going.
+NICOLA: The emperor and the Roman government kept going, like the same supply and switchboard even after the building gets rewired — so it&#x27;s still the same shop.
 
-MUI: Did Greek speech cancel Roman law?
+MUI: Why was the restored 1204 government Roman sovereignty, not just Greek survival?
 
-NICOLA: No — Greek doesn&#x27;t cancel Roman law, those are separate wires. What I can&#x27;t split yet is what actually stopped in the west and what kept running.
+NICOLA: Because the emperor and the same Roman government kept running things, not just Greeks speaking Greek — like the same shop with a new switchboard. Still Roman, just rewired.
 
-MUI: Justinian&#x27;s revised Code lands in five thirty-four; his later Novels, many in Greek, are new Roman law — same emperor, same authority, different language.
+MUI: Why does that continuity make it Roman sovereignty?
 
-NICOLA: Hang on — slow that down for me a tick. What exactly stopped in the west, and what kept running? I can&#x27;t picture which bits are which yet.
+NICOLA: Because it&#x27;s the same name and the same running of it, the emperor and government carrying on, not just the Greek language. Like the shop keeping its name through a rewire.
 
-MUI: In the west, the imperial court and emperor stopped; in the east, the emperor, taxation and Roman law kept running from Constantinople.
+MUI: Got a clear distinction there—what makes the emperor&#x27;s continuity sovereignty rather than just Greek culture?
 
-NICOLA: So the west lost the court and emperor, but Constantinople kept the emperor, tax and Roman law running. Right — but then where does a whole new Byzantine Empire come from, if that&#x27;s just the same house?
+NICOLA: The emperor and government running it are the shop&#x27;s name and running, not Greek language. Greek is just the wiring — the shop&#x27;s still Roman.
 
-MUI: It doesn&#x27;t come from anywhere — no new empire. They called themselves Rhomaioi, Romans; around nine hundred the Greek Basilika reworked Justinian&#x27;s Roman law under the same emperor&#x27;s authority.
+MUI: Constantinople was lost, yet Nicaea&#x27;s emperor still counted—why does that make it Roman sovereignty?
 
-NICOLA: So same emperor, same law, just Greek wording later on — like a rewire where the supply and the account stay in the same name. No new house, just new fittings.
+NICOLA: Because the shop&#x27;s name and the running of it carried on from Nicaea, not just the Greek language — the sovereignty went with that, not the building.
 
-MUI: Constantinople&#x27;s position helped — but what had to keep working for that position to actually matter?
+MUI: So losing the capital wasn&#x27;t losing the state—why doesn&#x27;t the capital&#x27;s loss end sovereignty if Nicaea&#x27;s emperor kept governing?
 
-NICOLA: Can&#x27;t picture what you mean — position on the map doing what, exactly? Nothing&#x27;s clicking there.
+NICOLA: The name on the door and the running of it carried on at Nicaea, so the capital moving didn&#x27;t kill the sovereignty — just the building.
 
-MUI: In seven seventeen, an Arab fleet came through the Bosporus toward the city; tax paid ships and diplomacy brought Bulgar help.
+MUI: Right—why did Nicaea&#x27;s emperor count as Roman sovereignty while the capital was lost?
 
-NICOLA: Slow that down for me — the fleet came up the Bosporus, then what? What had to keep working so the position actually counted for something?
+NICOLA: Same reason — the running of the shop went with the emperor at Nicaea, so the name and the sovereignty went with that, not with Constantinople.
 
-MUI: The Arab fleet came up the Bosporus to attack Constantinople; tax paid the Roman fleet, and diplomacy got Bulgar help hitting the besiegers through seven seventeen to seven eighteen.
+MUI: So 1204 lost the capital but not sovereignty—why was 1453 final when 1204 wasn&#x27;t?
 
-NICOLA: So tax paid ships and Bulgar help did the work — the map on its own wasn&#x27;t power. I still can&#x27;t picture how the position turned into that.
+NICOLA: 1453&#x27;s final because the Ottomans took the running of it away altogether — no sovereign left to carry the name on, unlike Nicaea where it kept going.
 
-MUI: Take seven seventeen: customs dues paid the Roman fleet, that fleet blocked the Bosporus, and Bulgar troops hit the besiegers — the map only became power through those payments and ships.
+MUI: Right, fourteen fifty-three removes the sovereign; twelve oh four only moves him. Why does that make fourteen fifty-three final?
 
-NICOLA: Okay — so the position is the wiring, and the tax money is the current that makes it live. No money, no fleet, the map&#x27;s just sitting there.
+NICOLA: Because in 1453 there&#x27;s no sovereign left running the shop — the Ottomans took it over. In 1204 the running just moved to Nicaea.
 
-MUI: Grain tax paid for the fleet and the diplomacy that brought Bulgar help. Which link in that chain is still unclear?
+MUI: What makes a sovereign who moves to Nicaea different from no sovereign left in 1453?
 
-NICOLA: The wire-and-current picture works now. What I still can&#x27;t see is the grain tax actually turning into ships — where does that money go?
+NICOLA: In 1204 the sovereign moved to Nicaea and kept running the shop, name and all. In 1453 the Ottomans took the running away, so no sovereign was left to carry the name.
 
-MUI: Officials sell collected grain tax, then pay a shipwright for one dromon and its rowers&#x27; wages; those rowers block the Bosporus.
+MUI: Why does moving the sovereign preserve the state, not just regional authority?
 
-NICOLA: So they sell the grain tax, and the cash pays a shipwright and the rowers&#x27; wages — that&#x27;s the current reaching the fleet. Same supply, same account, just new fittings.
+NICOLA: Moving the sovereign keeps the same running going, just somewhere else — like the shop&#x27;s supply carrying on at a new address. In 1453 there&#x27;s nothing left to carry it.
 
-MUI: What does the shipwright spend it on?
+MUI: What makes moving him preserve sovereignty, not just authority?
 
-NICOLA: Right, so the cash goes to the shipwright — but what&#x27;s he actually spending it on? Timber, wages, what? That&#x27;s the bit I still can&#x27;t see.
+NICOLA: Moving the sovereign keeps the same running going, just at a new address — so it&#x27;s still the shop, not just some local boss. In 1453 nothing&#x27;s left to carry it.
 
-MUI: What does he need to buy to build it?
+MUI: So what makes that state, not local rule?
 
-NICOLA: Timber, pitch, nails, and paying the blokes doing the work — that&#x27;s where the cash goes. So the tax becomes a ship the same way a job becomes a rewire: materials and wages.</pre>
+NICOLA: So they&#x27;re the state and not just a local boss because the sovereign carries the whole running with him, name and all, and a local boss only runs his own patch.
+
+MUI: You&#x27;ve got capital loss versus restoration clear. Why does that make Nicaea the same state, not just a local ruler holding out?
+
+NICOLA: There you go — the sovereign carries the whole running with him, name and all, so the state moves, not just some local boss holding a patch.
+
+MUI: Court end versus sovereignty loss—what&#x27;s the reason that difference makes it the same state?
+
+NICOLA: So the difference is the court ending versus the sovereignty going — one&#x27;s just the office closing, the other&#x27;s the whole shop moving. Same state because the sovereign carries the name and running with him. Like my business changing how I quote but keeping its name.</pre>
     </article>
   </div>
 </section>
 <section class="pair">
   <h2>Pair 3: why trauma can keep the body on alert</h2>
   <div class="statebox"><strong>Hidden learner:</strong> {&#x27;prior_knowledge&#x27;: &#x27;partial&#x27;, &#x27;confidence_calibration&#x27;: &#x27;overclaims&#x27;, &#x27;talk&#x27;: &#x27;terse&#x27;, &#x27;pace_memory&#x27;: &#x27;quick&#x27;, &#x27;english_proficiency&#x27;: &#x27;fluent&#x27;, &#x27;goal&#x27;: &#x27;exam&#x27;, &#x27;occupation_topic_distance&#x27;: &#x27;far&#x27;}
-    <br><strong>KCs:</strong> <code>kc1</code> misconception → <strong>partial</strong> (ceiling known)<br><code>kc2</code> absent → <strong>absent</strong> (ceiling partial)<br><code>kc3</code> absent → <strong>absent</strong> (ceiling known)
-    <br><strong>Occasions:</strong> voiced_error: 5, stuck_escalation: 6, correct_worth_why: 1, false_got_it: 1, ending_ownership: 1
-    <br><strong>Advances:</strong> turn 21: kc1 misconception → partial via worked_example
+    <br><strong>KCs:</strong> <code>kc1</code> partial → <strong>known</strong> (ceiling known)<br><code>kc2</code> misconception → <strong>partial</strong> (ceiling known)<br><code>kc3</code> absent → <strong>absent</strong> (ceiling known)
+    <br><strong>Occasions:</strong> voiced_error: 2, stuck_escalation: 8, correct_worth_why: 2, false_got_it: 1, ending_ownership: 1
+    <br><strong>Advances:</strong> turn 1: kc2 misconception → partial via worked_example<br>turn 21: kc1 partial → known via worked_example
   </div>
   <div class="cols">
     <article>
@@ -575,57 +571,57 @@ JOHNNY: What makes the safe wait surprise the alarm?</pre>
     </article>
     <article>
       <h3>Hidden-state redesign <button onclick="copyText('state-2', this)">Copy all</button></h3>
-      <p class="metrics">25 turns · student/tutor words 383/259
-        · ratio 1.48 · 7 tutor questions</p>
-      <pre id="state-2">SHOBHA: Hello. For my test — why does the body stay on alert after trauma? I say it is because the bad memory keeps coming back, like wind at night making me check the nets.
+      <p class="metrics">25 turns · student/tutor words 367/269
+        · ratio 1.36 · 6 tutor questions</p>
+      <pre id="state-2">SHOBHA: Hello. I read trauma in my booklet — PTSD means you can&#x27;t forget a bad event, so the memory keeps coming and the body stays alert. Is that the right mark answer?
 
-SANTOSH: The memory keeps returning, true, but sounds and places get tied to danger too, so your body tightens before you have checked you are safe.
+SANTOSH: Half right. PTSD isn&#x27;t just not forgetting; it&#x27;s a persistent impairing pattern. If you skip the jetty for a month, the relief teaches you to keep skipping, not that the jetty is safe.
 
-SHOBHA: Okay, got it. So the wind at night could set off my body alarm before I even check the pond.
+SHOBHA: So staying away gives relief, and that relief teaches me to keep staying away. Like my cooperative member and that jetty stretch.
 
-SANTOSH: The wind can trip the alarm before you check. Once you check the pond and it&#x27;s calm, does the alarm settle?
+SANTOSH: Right — why does the relief keep you away, and what safe thing does skipping the jetty stop you learning?
 
-SHOBHA: Yes, the wind sets off my body alarm. But the real problem is the bad memory keeps coming back — once it fades, the body settles.
+SHOBHA: The relief keeps me away because it feels good, that part I get. But the safe thing I stop learning on the jetty — that&#x27;s where I lose it.
 
-SANTOSH: Alarm fires before memory—what settles it after checking?
+SANTOSH: What does the jetty have to teach you?
 
-SHOBHA: Okay, so the body alarm and the memory are two separate things. For me, the trauma is the bad event, and the body stays tight because that bad memory keeps coming back.
+SHOBHA: So the jetty is meant to teach me something — that it&#x27;s safe now, not just the place where the accident happened? That part I still can&#x27;t say.
 
-SANTOSH: Wind starts the alarm before memory. When you check the pond and it&#x27;s calm, what happens inside you?
+SANTOSH: Your body can react to the jetty before you consciously register it&#x27;s safe now. Like a smoke alarm going off for burnt toast — the sound is real, but it isn&#x27;t proof of fire.
 
-SHOBHA: When the pond is calm, my chest loosens. But I still say the bad memory is what keeps the body tight — that is the whole problem.
+SHOBHA: Got it — like the smoke alarm for burnt toast, real sound but no fire.
 
-SANTOSH: Two in the morning, wind rattles the net; shoulders tighten in seconds, before memory. You check the pond for a minute, chest loosens. That settling is safety learning, not memory fading.
+SANTOSH: Which jetty cue sets the alarm off?
 
-SHOBHA: Say that again slower, please. So the chest loosening after I check the calm pond is safety learning, not the bad memory going away?
+SHOBHA: The alarm picture I can see. But what the jetty itself is meant to teach me — that I still can&#x27;t put into words.
 
-SANTOSH: Yes. Say you check the pond at two in the morning: wind rattles the net, shoulders tighten; you look, see calm water, chest loosens in a minute or two. That loosening is your body learning this wind is not danger, while the memory can still be there.
+SANTOSH: What exactly at the jetty, a sound or sight or smell, hits you before you register it is safe now?
 
-SHOBHA: So safety learning is the chest loosening after I check the calm pond. That word I don&#x27;t fully have yet. Show me the one step where it is different from the memory fading.
+SHOBHA: Trigger is the reminder, the thing that sets the alarm — like after a monsoon scare, small sounds wake me. Is the jetty cue the same sort of thing?
 
-SANTOSH: The alarm can fire from the wind before the memory arrives. Safety learning is the new evidence after you check: calm water, chest loosens. That is separate from the old memory fading.
+SANTOSH: Yes, same sort: the cue is the small sound, not the whole jetty. Say a shutter bangs at two; your heart jumps before you check the window, then you see the street quiet and it settles.
 
-SHOBHA: You said safety learning is the new evidence after I check, separate from the memory fading. That step between the two still looks the same to me — show me the one difference.
+SHOBHA: You said the shutter bangs at two and my heart jumps before I check the window. Say that again slower — the sound is the trigger, yes?
 
-SANTOSH: What if the memory stays but your chest loosens?
+SANTOSH: Yes. The shutter bangs at two in the morning. Your heart jumps before you look; then you see the quiet street and it settles.
 
-SHOBHA: If the chest loosens, then the bad memory must be fading — because it is the memory that keeps the body tight. Once it fades, the problem is gone.
+SHOBHA: The shutter bangs, heart jumps, then I check and it settles — that is like my small sounds after the monsoon scare. But what the jetty teaches, I still cannot say.
 
-SANTOSH: What would you notice if the memory stayed sharp and your chest still loosened?
+SANTOSH: The jetty teaches your body that a bang can stay just a bang, and the quiet after it is present safety, not the old danger.
 
-SHOBHA: Then the chest would stay tight, because the bad memory is still there. The tight chest is the sign the memory has not faded.
+SHOBHA: The shutter fits my small sounds after the monsoon scare, so that part is clear. But the jetty teaching — a bang staying just a bang — that still will not come into words for me.
 
-SANTOSH: Hm. What would you test next to tell those apart?
+SANTOSH: Right — what would you try next with that jetty cue?
 
-SHOBHA: If the memory stays sharp, my chest stays tight — that tightness is how I know the bad memory is still there. I can&#x27;t picture it loosening while the memory is still sharp.
+SHOBHA: Yes, shutter — sound, jump, check, settle, like my monsoon sounds. But safety learning at the jetty, a bang staying just a bang — I still cannot connect that to the jetty being safe.
 
-SANTOSH: Try this: wind at two, shoulders tight; you check the pond three times, calm each time; by the third check your chest loosens while the memory stays sharp.
+SANTOSH: A creak at dusk, heart pounds before you look; you check, count ten quiet minutes, no accident — that quiet is the lesson the jetty can teach.
 
-SHOBHA: So by the third check the chest loosens from the checking, not from the memory going. The sharp memory can stay and the chest can still loosen — I had those stuck together.
+SHOBHA: And this creak at dusk — heart pounds, then ten quiet minutes, that quiet is the lesson. Like my monsoon sounds when I count quiet nights and nothing happens.
 
-SANTOSH: Wind fires the alarm before you know you&#x27;re safe. What other cue have you come across?
+SANTOSH: Right — the creak hits before your verdict; the quiet minutes are the verdict. Why does that quiet, not the relief, do the teaching?
 
-SHOBHA: So the checking teaches my body the wind is not danger, even with the sharp memory still there. Like my neighbour staying away from the jetty after the drowning — is that a cue too?</pre>
+SHOBHA: So the creak jumps my heart first, and only after do I decide. The quiet time is what teaches, not the relief. Why does that quiet teach better than staying away?</pre>
     </article>
   </div>
 </section>
